@@ -9,7 +9,7 @@ class HOCRElement:
 
     __metaclass__ = ABCMeta
 
-    COORDINATES_PATTERN = re.compile("bbox\s(-?[0-9]+)\s(-?[0-9]+)\s(-?[0-9]+)\s(-?[0-9]+)")
+    COORDINATES_PATTERN = re.compile("bbox\s(-?[0-9.]+)\s(-?[0-9.]+)\s(-?[0-9.]+)\s(-?[0-9.]+)")
 
     def __init__(self, hocr_html, parent, next_tag, next_attribute, next_class):
         self.__coordinates = (0, 0, 0, 0)
@@ -29,10 +29,10 @@ class HOCRElement:
             title = self._hocr_html['title']
             match = HOCRElement.COORDINATES_PATTERN.search(title)
             if match:
-                self.__coordinates = (int(match.group(1)),
-                                      int(match.group(2)),
-                                      int(match.group(3)),
-                                      int(match.group(4)))
+                self.__coordinates = (int(match.group(1).split(".")[0]),
+                                      int(match.group(2).split(".")[0]),
+                                      int(match.group(3).split(".")[0]),
+                                      int(match.group(4).split(".")[0]))
             else:
                 raise ValueError("The HOCR element doesn't contain a valid title property")
         except KeyError:
