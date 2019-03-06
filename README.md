@@ -9,6 +9,8 @@ Originally written by [Athento][orig-hocr-parser-link].
 
 [hocr-parser-link]: https://github.com/UB-Mannheim/hocr-parser "hocr-parser"
 [orig-hocr-parser-link]: athento/hocr-parser "Athento's hocr-parser"
+[akf-link]:  https://github.com/UB-Mannheim/Aktienfuehrer-Datenarchiv-Tools "Aktienfuehrer-Datenarchiv-Tools"
+
 
 
 
